@@ -7,7 +7,7 @@ object P08 {
     def f0[T](list: List[T]): List[T] = {
       def tailRec(result: List[T], curList: List[T]): List[T] = curList match {
         case Nil => result
-        case head :: tail => tailRec(head :: result, tail.dropWhile(head ==)) 
+        case head :: tail => tailRec(head :: result, tail.dropWhile(head == _)) 
       }
       tailRec(Nil, list).reverse
     }
